@@ -1,0 +1,10 @@
+For requirement installations read "install.txt".
+
+Run "run.bat" by double clicking it on file explorer, it will ask
+for the search them, and the max number of products you want to search.
+
+Products data/photos are downloaded to:
+
+Grabber/*search term*/*product id*/file
+Grabber/*search term*/*product id*/photo1.jpg
+Grabber/*search term*/*product id*/photo2.jpg

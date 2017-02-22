@@ -1,0 +1,21 @@
+Download and install in the following order:
+python-2.7
+ 32bit: https://www.python.org/ftp/python/2.7/python-2.7.msi
+ 64bit: https://www.python.org/ftp/python/2.7/python-2.7.amd64.msi
+
+pywin32
+ 32bit: https://ufpr.dl.sourceforge.net/project/pywin32/pywin32/Build%20220/pywin32-220.win32-py2.7.exe
+ 64bit: https://ufpr.dl.sourceforge.net/project/pywin32/pywin32/Build%20220/pywin32-220.win-amd64-py2.7.exe
+
+Install python2.7, pywin32.
+
+Once you finished:
+Download and copy this files to C:\
+  get-pip.py:
+    https://bootstrap.pypa.io/get-pip.py
+  lxml:
+   http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml
+   32bit: find lxml‑3.7.3‑cp27‑cp27m‑win32.whl and download it.
+   64bit: find lxml‑3.7.3‑cp27‑cp27m‑win_amd64.whl and download it.
+
+Run (double click) "pyrequirements.bat" (it's on this folder).
