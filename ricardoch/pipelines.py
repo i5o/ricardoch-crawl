@@ -17,14 +17,16 @@ class ProductImage(ImagesPipeline):
         term_path = os.path.join(
             settings.DATA_STORE,
             request.meta["search_term"][0])
-        data_path = os.path.join(term_path, request.meta["number"][0] + " - " + request.meta["price"])
+        data_path = os.path.join(term_path, request.meta["number"][0] + " - " + request.meta["price"][0])
         if not os.path.exists(data_path):
             os.makedirs(data_path)
 
         filename = request.url.split("/")[-1]
-        return os.path.join(request.meta["search_term"][0],
-                            request.meta["number"][0] + " - " + request.meta["price"],
+        file_ = os.path.join(request.meta["search_term"][0],
+                            request.meta["number"][0] + " - " + request.meta["price"][0],
                             filename) + ".jpg"
+
+        return file_
 
     def get_media_requests(self, item, info):
         for url in item.get('image_urls'):

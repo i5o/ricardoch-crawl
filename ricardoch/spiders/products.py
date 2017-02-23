@@ -17,9 +17,13 @@ class ProductsSpider(Spider):
         self.search_term = raw_input("Search term: ")
         self.max_products = int(
             raw_input("Products to download (int): ").strip())
+        self.min_price = int(raw_input("Min price (int): ").strip())
+        self.max_price = int(raw_input("Max price (int, 0 for no limit): ").strip())
 
     def start_requests(self):
-        website_url = "https://www.ricardo.ch/search/index/?SearchSentence=%s&PageSize=120" % self.search_term
+        website_url = "https://www.ricardo.ch/search/index/?SearchSentence=%s&PageSize=120&PriceMin=%d" % (self.search_term, self.min_price)
+        if self.max_price:
+            website_url = "https://www.ricardo.ch/search/index/?SearchSentence=%s&PageSize=120&PriceMin=%d&PriceMax=%d" % (self.search_term, self.min_price, self.max_price)
         yield Request(url=website_url, callback=self.parse)
 
     def parse(self, response):
